@@ -1,6 +1,6 @@
-import {AppBar} from "@material-ui/core";
-import cartWidget from "./cartWidget";
-import {Wrapper, Logo , MenuItem, Left, Center, Right} from "./styledComponents";
+import { AppBar } from "@mui/material";
+import CartWidget from "./CartWidget";
+import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents";
 
 const NavBar = () => {
   return (
@@ -18,7 +18,7 @@ const NavBar = () => {
           <Right>
             <MenuItem>Registrarse</MenuItem>
             <MenuItem>Loguearse</MenuItem>
-            <MenuItem><cartWidget/></MenuItem>
+            <MenuItem><CartWidget/></MenuItem>
           </Right>
         </Wrapper>
       </AppBar>
@@ -26,4 +26,4 @@ const NavBar = () => {
   );
 }
 
-export default App;
+export default NavBar;
