@@ -1,4 +1,4 @@
-import { AppBar } from "@mui/material";
+import { AppBar, Divider, List, ListItem, ListItemText } from "@mui/material";
 import CartWidget from "./CartWidget";
 import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents";
 
@@ -16,9 +16,20 @@ const NavBar = () => {
             <MenuItem>Ropa</MenuItem>
           </Center>
           <Right>
-            <MenuItem>Registrarse</MenuItem>
-            <MenuItem>Loguearse</MenuItem>
-            <MenuItem><CartWidget/></MenuItem>
+            <List>
+              <ListItem button>
+                <ListItemText primary="Registrarse" secondary="nuevo usuario" />
+              </ListItem>
+              <Divider />
+              <ListItem button>
+                <ListItemText primary="Loguearse" />
+              </ListItem>
+              <Divider light />
+              <ListItem button>
+                <ListItemText secondary="en carrito" />
+                <CartWidget />
+              </ListItem>
+            </List>
           </Right>
         </Wrapper>
       </AppBar>

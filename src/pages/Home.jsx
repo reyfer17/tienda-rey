@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <>
             <NavBar/>
-            <ItemListContainer greeting= "Hola Mundo Item List Container!!!" />
+            <ItemListContainer greeting= "Bienvenidos a la tienda de segunda mano de zona sur, lleve a precio de ganga hasta quedarse sin pesos en el bolsillo." />
         </>
     );
 }
