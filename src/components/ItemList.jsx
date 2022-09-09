@@ -7,7 +7,7 @@ import dataFromDB from "../utils/DB";
 const ItemList = () => {
     const [data, setData] = useState([])
     useEffect(() =>{
-        customFetch(2000, dataFromDB)
+        customFetch(3000, dataFromDB)
             .then(datos => setData(dataFromDB))
             .catch(err => console.log(err))
     },[])
@@ -16,6 +16,7 @@ const ItemList = () => {
         <>
         <Grid container wrap="nowrap">
         {
+            data.length ?
             data.map(item =>(
                 <Item
                     key={item.id}
@@ -23,7 +24,8 @@ const ItemList = () => {
                     category={item.category}
                     imageProduct={item.img}
                     price={item.price} />
-            ))   
+            ))  
+            : <p>Cargando, espere unos segundos...</p> 
         }
         </Grid>
         </>
