@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
+import Grid from '@mui/material/Grid';
 
 const ItemList = () => {
     const [data, setData] = useState([])
@@ -10,22 +11,23 @@ const ItemList = () => {
                 id: 1,
                 title: "Pepa Pig",
                 category: "juguetes",
-                img:"../images/pepa.jpg",
+                img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4YDA4KcHWfbfqMcyX-zHHVmr7uLv_o4S3Sg&usqp=CAU",
                 price: 1000
             },
             {
                 id: 2,
                 title: "Bebe Lloron Unicornio",
                 category: "juguetes",
-                img:"https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2Ffn2sawfzY-A%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dfn2sawfzY-A&tbnid=QWwWOETlU65BHM&vet=12ahUKEwipj66OsIb6AhX9uJUCHdfKCP0QMyg9egQIARB-..i&docid=REpvOuZ7Gs3WxM&w=1280&h=720&q=crybabies&ved=2ahUKEwipj66OsIb6AhX9uJUCHdfKCP0QMyg9egQIARB-",
+                img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlgkthRSkxBeaLUc25KD3X1ZBxs94liLJ2eA&usqp=CAU",
                 price: 6000
             },
             {
                 id: 3,
                 title: "El cisne Negro",
                 category: "libros",
-                img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTP41psjOsnggExUMswbUronl9LGVDW0vvnuA&usqp=CAU",
-                price: 300
+                img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5DGYQecayirdInLi0ILG2b5QG_3ENmic3dKyLgYPAkxeaMgZOdKGwZrX0ywN9MI7t-jM&usqp=CAU",
+                //img:'../images/cisnenegro.jpg',
+                price: 500
             },
             {
                 id: 4,
@@ -40,6 +42,7 @@ const ItemList = () => {
     
     return (
         <>
+        <Grid container wrap="nowrap">
         {
             data.map(item =>(
                 <Item
@@ -48,8 +51,9 @@ const ItemList = () => {
                     category={item.category}
                     imageProduct={item.img}
                     price={item.price} />
-            ))
+            ))   
         }
+        </Grid>
         </>
     )
 }
