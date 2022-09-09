@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -12,17 +11,15 @@ import ItemCount from "./ItemCount";
 const Item = ({title, category, imageProduct, price}) => {
   return (
     <>
-    <Grid container wrap="nowrap">
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 400, marginLeft: 0.5, my:5, marginRight: 2 }}>
     <CardMedia
       component="img"
       height="200"
-      width="50"
       src={imageProduct}
       alt={title}
     />
     <CardContent>
-      <Typography gutterBottom variant="h5" component="div">
+      <Typography gutterBottom variant="h5" component="div" >
         {title}
       </Typography>
       <Typography variant="body2" color="text.secondary">
@@ -38,7 +35,7 @@ const Item = ({title, category, imageProduct, price}) => {
       <Button size="small">Detalles</Button>
     </CardActions>
   </Card>
-  </Grid>
+  
   </>
   );
 }
