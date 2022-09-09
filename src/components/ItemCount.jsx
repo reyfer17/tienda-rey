@@ -2,7 +2,7 @@ import {ButtonGroup, Button} from "@mui/material";
 import { useState } from "react";
 import Swal from 'sweetalert2';
 
-const ItemCount = ({inicial, stock}) => {
+const ItemCount = ({inicial, stock, titulo}) => {
     const [unidadesACargar, setUnidadesACargar] = useState(inicial);
     
     const agregarUnidades = () =>{
@@ -13,12 +13,22 @@ const ItemCount = ({inicial, stock}) => {
         unidadesACargar>1 && setUnidadesACargar (unidadesACargar - 1);
     }
     const onAdd= () => {
+        if(unidadesACargar===1){
         Swal.fire({
             title: 'Carga realizada',
-            text: `Ha cargado ${unidadesACargar} unidades del producto`,
+            text: `Ha cargado ${unidadesACargar} unidad del producto "${titulo}"`,
             icon: 'success',
             confirmButtonText: 'OK!'
           })
+        } else{
+          Swal.fire({
+            title: 'Carga realizada',
+            text: `Ha cargado ${unidadesACargar} unidades del producto "${titulo}"`,
+            icon: 'success',
+            confirmButtonText: 'OK!'
+          })
+        }
+
     }
     
     return(

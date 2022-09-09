@@ -12,30 +12,29 @@ const Item = ({title, category, imageProduct, price}) => {
   return (
     <>
     <Card sx={{ width: 400, marginLeft: 0.5, my:5, marginRight: 2 }}>
-    <CardMedia
-      component="img"
-      height="200"
-      src={imageProduct}
-      alt={title}
-    />
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="div" >
-        {title}
-      </Typography>
-      <Typography variant="body2" color="text.secondary">
-        Categoria: {category}
-      </Typography>
-      <Typography color="text.secondary">
-         ${price} 
-      </Typography>
-      <ItemCount component="div" stock={5} inicial={1}/>
-    </CardContent>
-    <CardActions>
-      <Button size="small">Compartir</Button>
-      <Button size="small">Detalles</Button>
-    </CardActions>
-  </Card>
-  
+      <CardMedia
+        component="img"
+        height="200"
+        src={imageProduct}
+        alt={title}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div" >
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          Categoria: {category}
+        </Typography>
+        <Typography color="text.secondary">
+          ${price} 
+        </Typography>
+        <ItemCount component="div" stock={5} inicial={1} titulo={title}/>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Compartir</Button>
+        <Button size="small">Detalles</Button>
+      </CardActions>
+    </Card>
   </>
   );
 }
