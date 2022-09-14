@@ -10,12 +10,12 @@ const dataFromDB = [
     },
     {
         id: 2,
-        title: "Bebe Lloron Unicornio",
+        title: "Bebe Llorón Unicornio",
         category: "juguetes",
         img:"https://d3ugyf2ht6aenh.cloudfront.net/stores/463/258/products/cry-babies-bebes-llorones-bebe-lloron-dreamy-unicornio1-ed32aa876d83d8855316571978026613-1024-1024.png",
-        price: 6000,
+        price: 12000,
         stock: 8,
-        detail:"El bebe trae un traje de unicornio y viene con un chupete que al sacarselo llora, cargandolo con agua previamente."
+        detail:"El bebé trae un traje de unicornio y viene con un chupete que al sacárselo llora, cargándolo con agua previamente. Pertenece a la colección BEBES LLORONES LAGRIMAS MAGICAS."
     },
     {
         id: 3,

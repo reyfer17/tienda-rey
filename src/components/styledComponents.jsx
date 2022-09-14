@@ -41,4 +41,37 @@ const MenuItem = styled.div`
     margin-left: 25px;
     `;
 
-export { Wrapper, Logo, MenuItem, Left, Center, Right };
+const DetailTitle = styled.h1`
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+   
+    `;
+
+const DetailDetail = styled.p`
+    font-size: 20px;
+    text-align: justify;
+    `;
+
+const DetailPrice= styled.p`
+    font-size: 40px;
+    color: blue;
+    font-style: oblique;
+    text-align: right;
+    `;
+
+const DetailStock= styled.p`
+    font-size: 20px;
+    color: violet;
+    font-style: oblique;
+    text-align: right;
+    `;
+
+const ItemCountContainer= styled.div`
+    font-size: 20px;
+    color: violet;
+    font-style: oblique;
+    margin-top:200px;
+    `;
+
+export { Wrapper, Logo, MenuItem, Left, Center, Right, DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer };
