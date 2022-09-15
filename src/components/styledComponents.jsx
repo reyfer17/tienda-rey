@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const Wrapper = styled.div`
     padding: 1rem 2rem;
     display: flex;
@@ -8,7 +9,6 @@ const Wrapper = styled.div`
     `;
 
 const Left = styled.div`
-    color: red;
     flex: 1;
     display: flex;
     align-items: center;
@@ -23,9 +23,19 @@ const Center = styled.div`
     `;
 
 const Logo = styled.h1`
+    font-size: 4rem;
     font-weight: bold;
     font-style: italic;
-    font-size: 4rem;
+    color: red;
+    &:hover { 
+        color: yellow ;
+        font-size: 4.1rem;}
+    &:visited { 
+        color: yellow ;
+        font-size: 4.1rem;}
+    &:active { 
+        color: yellow ;
+        font-size: 4.2rem;}
     `;
 
 const Right = styled.div`
@@ -36,16 +46,25 @@ const Right = styled.div`
     `;
 
 const MenuItem = styled.div`
-    font-size: 18px;
+    color: white;
+    font-size: 1.5rem;
     cursor: pointer;
     margin-left: 25px;
+    &:hover { 
+        color: yellow ;
+        font-size: 4.1rem;}
+    &:visited { 
+        color: yellow ;
+        font-size: 4.1rem;}
+    &:active { 
+        color: yellow ;
+        font-size: 4.2rem;}
     `;
 
 const DetailTitle = styled.h1`
     font-size: 50px;
     text-align: center;
     text-decoration: underline;
-   
     `;
 
 const DetailDetail = styled.p`
