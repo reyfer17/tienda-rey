@@ -1,7 +1,10 @@
+import { ShoppingCartOutlined } from "@mui/icons-material";
+
 const Cart = () =>{
     return (
         <>
-        <h1>Soy el carrito de TiendaRey</h1>
+            <h1>Soy el carrito de TIENDA REY</h1>
+            <ShoppingCartOutlined />
         </>
     )
 }
