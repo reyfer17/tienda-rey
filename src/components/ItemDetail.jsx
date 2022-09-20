@@ -15,11 +15,11 @@ const ItemDetail = ({item}) => {
                     <DetailStock>stock: {item.stock}</DetailStock>                  
                 </Grid>
                 <Grid item >
-                    <img width={400} src={item.img}/>
+                    <img width={400} src={item.img} alt={item.title}/>
                 </Grid>
                 <Grid item>
                   <ItemCountContainer>
-                    <ItemCount component="div" stock={item.stock} inicial={1} titulo={item.title}/>
+                    <ItemCount component="div" stock={item.stock} inicial={0} titulo={item.title}/>
                   </ItemCountContainer>
                 </Grid>
             </Grid>

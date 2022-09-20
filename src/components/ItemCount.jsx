@@ -10,7 +10,7 @@ const ItemCount = ({inicial, stock, titulo}) => {
     }
 
     const quitarUnidades = () =>{
-        unidadesACargar>1 && setUnidadesACargar (unidadesACargar - 1);
+        unidadesACargar>0 && setUnidadesACargar (unidadesACargar - 1);
     }
     const onAdd= () => {
         if(unidadesACargar===1){
@@ -38,7 +38,10 @@ const ItemCount = ({inicial, stock, titulo}) => {
                 <Button>{unidadesACargar}</Button>
                 <Button onClick={agregarUnidades}>+</Button>
             </ButtonGroup>   
-            <Button onClick={onAdd}>Agregar</Button>
+            {stock && unidadesACargar
+            ?<Button variant="contained" onClick={onAdd}>Agregar</Button>
+            :<Button disabled onClick={onAdd}>Agregar</Button>
+            }
         </>
     )
 }
