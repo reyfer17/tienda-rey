@@ -17,14 +17,14 @@ const ItemDetail = ({item}) => {
         if(q===1){
         Swal.fire({
             title: 'Carga realizada',
-            text: `Ha cargado ${q} unidad del producto "${item.titulo}"`,
+            text: `Ha cargado ${q} unidad del producto "${item.title}"`,
             icon: 'success',
             confirmButtonText: 'OK!'
         })
         } else{
         Swal.fire({
             title: 'Carga realizada',
-            text: `Ha cargado ${q} unidades del producto "${item.titulo}"`,
+            text: `Ha cargado ${q} unidades del producto "${item.title}"`,
             icon: 'success',
             confirmButtonText: 'OK!'
         })
