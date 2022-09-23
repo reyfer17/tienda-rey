@@ -6,29 +6,33 @@ import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import Swal from 'sweetalert2';
 import { DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer} from "./styledComponents";
+import { CartContext } from './CartContext';
+import { useContext } from 'react';
 
 
 const ItemDetail = ({item}) => {
 
     const [itemCount, setItemCount] = useState(0);
+    const {addItem} = useContext(CartContext)
     
     const onAdd= (q) => {
         setItemCount(q);
         if(q===1){
-        Swal.fire({
-            title: 'Carga realizada',
-            text: `Ha cargado ${q} unidad del producto "${item.title}"`,
-            icon: 'success',
-            confirmButtonText: 'OK!'
-        })
+            Swal.fire({
+                title: 'Carga realizada',
+                text: `Ha cargado ${q} unidad del producto "${item.title}"`,
+                icon: 'success',
+                confirmButtonText: 'OK!'
+            })
         } else{
-        Swal.fire({
-            title: 'Carga realizada',
-            text: `Ha cargado ${q} unidades del producto "${item.title}"`,
-            icon: 'success',
-            confirmButtonText: 'OK!'
-        })
-        }
+            Swal.fire({
+                title: 'Carga realizada',
+                text: `Ha cargado ${q} unidades del producto "${item.title}"`,
+                icon: 'success',
+                confirmButtonText: 'OK!'
+            })
+          };
+        addItem(item);
     }
 
     return(
