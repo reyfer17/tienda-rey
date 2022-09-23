@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 
 
 const Cart = () =>{
-    const { cartList, clearCart } = useContext(CartContext)
+    const { cartList, clearCart, removeItem } = useContext(CartContext)
     return (
         <>
             <h1>Soy el carrito de TIENDA REY</h1>
@@ -19,7 +19,7 @@ const Cart = () =>{
                     <p>Valor x unidad: ${item.priceProduct}</p>
                     <p>Cantidad: {item.qProduct}</p>
                     <p>Total x {item.qProduct} unidad/es: ${item.priceProduct * item.qProduct }</p>
-                    
+                    <button onClick={ () => removeItem(item.idProduct) }>Eliminar</button>   
                 </li>)
             }
             </ul>
