@@ -9,28 +9,30 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
 
     const addItem = (product,q) => {
-        setCartList([
-            ...cartList, 
-            {
-                idProduct: product.id,
-                imgProduct: product.img,
-                priceProduct: product.price,
-                titleProduct: product.title,
-                qtyProduct: q
-            }
-        ])
-    };
+        let isInCart = cartList.find(p => p.idProduct === product.id);
+        if (isInCart === undefined){
+            setCartList([
+                ...cartList, 
+                {
+                    idProduct: product.id,
+                    imgProduct: product.img,
+                    priceProduct: product.price,
+                    titleProduct: product.title,
+                    qProduct: q
+                }
+            ]);
+        } else {
+            isInCart.qProduct += q;
+            setCartList([
+                ...cartList
+            ]);
+        }
+    }
 
     const clearCart = () => {
         setCartList([])
     };
 
-    /*const isInCart = (product) => {
-        cartList.find ( p => p.id == product.id)?
-        p.
-
-        )
-    }*/
 
     /*const removeItem (id)= (product) => {
         setCartList([

@@ -16,7 +16,10 @@ const Cart = () =>{
             {
                 cartList.map(item=> <li>
                     <p>{item.titleProduct}</p>
-                    <p>Cantidad: {item.qtyProduct}</p>
+                    <p>Valor x unidad: ${item.priceProduct}</p>
+                    <p>Cantidad: {item.qProduct}</p>
+                    <p>Total x {item.qProduct} unidad/es: ${item.priceProduct * item.qProduct }</p>
+                    
                 </li>)
             }
             </ul>
