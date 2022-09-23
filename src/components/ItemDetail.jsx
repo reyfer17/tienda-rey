@@ -32,7 +32,7 @@ const ItemDetail = ({item}) => {
                 confirmButtonText: 'OK!'
             })
           };
-        addItem(item);
+        addItem(item,q);
     }
 
     return(
