@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents";
 
-
 const NavBar = () => {
   return (
     <>
@@ -27,10 +26,12 @@ const NavBar = () => {
                 <ListItemText primary="Loguearse" />
               </ListItem>
               <Divider light />
-              <ListItem button>
-                <ListItemText secondary="en carrito" />
-                <CartWidget />
-              </ListItem>
+              <Link to="/cart" style={{textDecoration:"none"}} >
+                <ListItem button>
+                  <ListItemText secondary="en carrito" />
+                  <CartWidget />
+                </ListItem>
+              </Link>
             </List>
           </Right>
         </Wrapper>

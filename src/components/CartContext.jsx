@@ -40,8 +40,23 @@ const CartContextProvider = ({children}) => {
         );
     }
 
+    const calcCartQ = () => {
+        let qOnCart = cartList.map (p => p.qProduct);
+        return qOnCart.reduce (((pValue, cValue) => pValue + cValue),0);
+    }
+
+    const calcTotalxProduct = (idProduct) => {
+        let i = cartList.map(p => p.idProduct).indexOf(idProduct);
+        return cartList[i].priceProduct*cartList[i].qProduct;
+    }
+
+    const calcTotal= () => {
+        let totalxProduct = cartList.map (p => calcTotalxProduct(p.idProduct));
+        return totalxProduct.reduce (((pValue, cValue) => pValue + cValue),0);
+    }
+
     return (
-        <CartContext.Provider value={{cartList, addItem, clearCart, removeItem}}>
+        <CartContext.Provider value={{cartList, addItem, clearCart, removeItem, calcCartQ, calcTotalxProduct, calcTotal}}>
             {children}
         </CartContext.Provider>
     )
