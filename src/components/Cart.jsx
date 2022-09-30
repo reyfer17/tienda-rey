@@ -18,13 +18,13 @@ const Cart = () =>{
                 <>
                     <ul>
                         {
-                            cartList.map(item=> <li>
+                            cartList.map(item=> (<li key={item.idProduct}>
                                 <p>{item.titleProduct}</p>
                                 <p>Valor x unidad: ${item.priceProduct}</p>
                                 <p>Cantidad: {item.qProduct}</p>
                                 <p>Total x {item.qProduct} unidad/es: ${calcTotalxProduct(item.idProduct) }</p>
                                 <button onClick={ () => removeItem(item.idProduct) }>Eliminar</button>   
-                            </li>)
+                            </li>))
                         }
                     </ul>
                     <h2>El total es de: ${calcTotal()}</h2>
