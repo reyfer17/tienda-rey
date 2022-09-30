@@ -12,9 +12,9 @@ const NavBar = () => {
             <Link style={{textDecoration:"none"}} to="/"><Logo >TIENDA REY</Logo></Link>
           </Left>
           <Center> 
-            <Link style={{textDecoration:"none"}} to="/category/1"><MenuItem>Juguetes</MenuItem></Link>
-            <Link style={{textDecoration:"none"}} to="/category/2"><MenuItem>Libros</MenuItem></Link>
-            <Link style={{textDecoration:"none"}} to="/category/3"><MenuItem>Ropa</MenuItem></Link>
+            <Link style={{textDecoration:"none"}} to="/category/juguetes"><MenuItem>Juguetes</MenuItem></Link>
+            <Link style={{textDecoration:"none"}} to="/category/libros"><MenuItem>Libros</MenuItem></Link>
+            <Link style={{textDecoration:"none"}} to="/category/ropa"><MenuItem>Ropa</MenuItem></Link>
           </Center>
           <Right>
           <List>

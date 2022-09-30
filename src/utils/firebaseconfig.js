@@ -29,7 +29,7 @@ export async function getAllItems() {
 
 export async function getItemsByCategory(idCategory) {
   const myCollection = collection(db,'products');
-  const queryProducts = query(myCollection, where("categoryCode","==", idCategory))
+  const queryProducts = query(myCollection, where("category","==", idCategory))
   const productsSnapshot = await getDocs(queryProducts);
 
   return productsSnapshot.docs.map(doc => {
