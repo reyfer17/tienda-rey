@@ -18,6 +18,7 @@ export default db;
 export async function getAllItems() {
   const myCollection = collection(db,'products');
   const productsSnapshot = await getDocs(myCollection);
+  
   return productsSnapshot.docs.map(doc => {
     return{
       ...doc.data(),
@@ -30,10 +31,22 @@ export async function getItemsByCategory(idCategory) {
   const myCollection = collection(db,'products');
   const queryProducts = query(myCollection, where("categoryCode","==", idCategory))
   const productsSnapshot = await getDocs(queryProducts);
+
   return productsSnapshot.docs.map(doc => {
     return{
       ...doc.data(),
       id: doc.id
     }
   });
+}
+
+export async function getItem(id){
+  const myCollection = collection(db,'products');
+  const productRef = doc(myCollection, id);
+  const productSnapshot = await getDoc(productRef);
+
+  return {
+    ...productSnapshot.data(),
+    id: productSnapshot.id
+  };
 }
