@@ -1,11 +1,27 @@
-import { ShoppingCartOutlined } from "@mui/icons-material";
+import { Email, ShoppingCartOutlined } from "@mui/icons-material";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { serverTimestamp } from "firebase/firestore";
 
 const Cart = () =>{
     const { cartList, clearCart, removeItem, calcTotalxProduct, calcTotal} = useContext(CartContext)
+
+    const createOrder= () => {
+        console.log("createOrder")
+        let order = {
+            buyer: {
+                name: "Periquito",
+                email: "periquito@delospalotes.com",
+                phone: "1123247874"
+            },
+            date: serverTimestamp(),
+            items: cartList,
+            total: calcTotal(),
+        }
+        console.log(order)
+    }
     return (
         <>
             <h1>Carrito de TIENDA REY <ShoppingCartOutlined /></h1>
@@ -31,7 +47,7 @@ const Cart = () =>{
                     <Link to="/" style={{textDecoration:"none"}} ><Button variant="contained">Continuar comprando</Button></Link>
                     {
                         (cartList.length > 0)
-                        ? <Button variant="contained" color="secondary">Finalizar compra</Button>
+                        ? <Button onClick={createOrder} variant="contained" color="secondary">Finalizar compra</Button>
                         :<></>
                     }  
                 </>
