@@ -1,15 +1,21 @@
-import { Email, ShoppingCartOutlined } from "@mui/icons-material";
+import { ShoppingCartOutlined } from "@mui/icons-material";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { serverTimestamp } from "firebase/firestore";
+import { serverTimestamp, setDoc, doc, collection } from "firebase/firestore";
+import db from "../utils/firebaseconfig";
 
 const Cart = () =>{
     const { cartList, clearCart, removeItem, calcTotalxProduct, calcTotal} = useContext(CartContext)
 
-    const createOrder= () => {
-        console.log("createOrder")
+    const createOrder= async () => {
+        let itemsForDB = cartList.map(item => ({
+            id: item.idProduct,
+            title: item.titleProduct,
+            price: item.priceProduct,
+            quantity: item.qProduct,
+        }))
         let order = {
             buyer: {
                 name: "Periquito",
@@ -17,10 +23,13 @@ const Cart = () =>{
                 phone: "1123247874"
             },
             date: serverTimestamp(),
-            items: cartList,
+            items: itemsForDB,
             total: calcTotal(),
         }
-        console.log(order)
+        //console.log(order)
+        const newOrderRef = doc(collection(db, "orders"))
+        await setDoc(newOrderRef, order)
+        alert("Su orden fue creada con nro. de codigo:" + newOrderRef.id)
     }
     return (
         <>
