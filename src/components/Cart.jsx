@@ -3,8 +3,9 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { serverTimestamp, setDoc, doc, collection } from "firebase/firestore";
+import { serverTimestamp, setDoc, doc, collection, updateDoc, increment } from "firebase/firestore";
 import db from "../utils/firebaseconfig";
+
 
 const Cart = () =>{
     const { cartList, clearCart, removeItem, calcTotalxProduct, calcTotal} = useContext(CartContext)
@@ -30,6 +31,14 @@ const Cart = () =>{
         const newOrderRef = doc(collection(db, "orders"))
         await setDoc(newOrderRef, order)
         alert("Su orden fue creada con nro. de codigo:" + newOrderRef.id)
+        clearCart()
+        itemsForDB.map(async (item) => {
+            const itemRef = doc(db,"products",item.id);
+            await updateDoc(itemRef,{
+                stock: increment(-item.quantity)
+            })
+        })
+
     }
     return (
         <>
