@@ -3,43 +3,10 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { serverTimestamp, setDoc, doc, collection, updateDoc, increment } from "firebase/firestore";
-import db from "../utils/firebaseconfig";
-
 
 const Cart = () =>{
     const { cartList, clearCart, removeItem, calcTotalxProduct, calcTotal} = useContext(CartContext)
 
-    const createOrder= async () => {
-        let itemsForDB = cartList.map(item => ({
-            id: item.idProduct,
-            title: item.titleProduct,
-            price: item.priceProduct,
-            quantity: item.qProduct,
-        }))
-        let order = {
-            buyer: {
-                name: "Periquito",
-                email: "periquito@delospalotes.com",
-                phone: "1123247874"
-            },
-            date: serverTimestamp(),
-            items: itemsForDB,
-            total: calcTotal(),
-        }
-        //console.log(order)
-        const newOrderRef = doc(collection(db, "orders"))
-        await setDoc(newOrderRef, order)
-        alert("Su orden fue creada con nro. de codigo:" + newOrderRef.id)
-        clearCart()
-        itemsForDB.map(async (item) => {
-            const itemRef = doc(db,"products",item.id);
-            await updateDoc(itemRef,{
-                stock: increment(-item.quantity)
-            })
-        })
-
-    }
     return (
         <>
             <h1>Carrito de TIENDA REY <ShoppingCartOutlined /></h1>
@@ -65,7 +32,7 @@ const Cart = () =>{
                     <Link to="/" style={{textDecoration:"none"}} ><Button variant="contained">Continuar comprando</Button></Link>
                     {
                         (cartList.length > 0)
-                        ? <Button onClick={createOrder} variant="contained" color="secondary">Finalizar compra</Button>
+                        ? <Button variant="contained" color="secondary"><Link to="/CreateOrder"> Finalizar Compra</Link></Button>
                         :<></>
                     }  
                 </>
