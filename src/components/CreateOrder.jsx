@@ -7,7 +7,6 @@ import db from "../utils/firebaseconfig";
 import EndPurchase from "./EndPurchase";
 import TextField from '@mui/material/TextField';
 
-
 const initialForm = {
         name:"",
         email:"",
@@ -15,13 +14,13 @@ const initialForm = {
 };
 
 const CreateOrder= () => {
-    const { cartList, clearCart, removeItem, calcTotalxProduct, calcTotal} = useContext(CartContext)
+    const { cartList, clearCart, calcTotal} = useContext(CartContext)
     const [form, setForm] = useState(initialForm);
     const [orderId, setOrderId] = useState("");
 
     const buyer = form;
 
-    const {name, email} = buyer;
+    const {name, email, phone} = buyer;
 
     const handleChange = (e) =>{
         const {name, value} = e.target;
@@ -113,7 +112,7 @@ const CreateOrder= () => {
                 </div>
             </section>
             ) : (
-                <EndPurchase name={name} email={email} orderId={orderId}/>
+                <EndPurchase name={name} email={email} phone={phone} orderId={orderId}/>
             )}
         </div>
         )

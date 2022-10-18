@@ -29,11 +29,8 @@ const Item = ({id, title, category, categoryID, imageProduct, price, stock}) => 
           ${price} 
         </Typography>
       </CardContent>
-      <CardActions >
-        <Link to={`/item/${id}`}><Button size="medium">Detalle</Button></Link>
-      </CardActions>
       <CardActions>
-        <Button size="small">Compartir</Button>
+        <Link to={`/item/${id}`} style={{textDecoration:"none"}}><Button variant="contained" color="secondary" size="medium">Detalle</Button></Link>
       </CardActions>
     </Card>
   </>

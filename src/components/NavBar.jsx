@@ -1,4 +1,4 @@
-import { AppBar, Divider, List, ListItem, ListItemText } from "@mui/material";
+import { AppBar, List, ListItem, ListItemText } from "@mui/material";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents";
@@ -18,14 +18,6 @@ const NavBar = () => {
           </Center>
           <Right>
           <List>
-              <ListItem button>
-                <ListItemText primary="Registrarse" secondary="nuevo usuario" />
-              </ListItem>
-              <Divider />
-              <ListItem button>
-                <ListItemText primary="Loguearse" />
-              </ListItem>
-              <Divider light />
               <Link to="/cart" style={{textDecoration:"none"}} >
                 <ListItem button>
                   <ListItemText secondary="en carrito" />

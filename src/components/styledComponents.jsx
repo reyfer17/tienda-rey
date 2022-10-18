@@ -93,4 +93,89 @@ const ItemCountContainer= styled.div`
     margin-top:200px;
     `;
 
-export { Wrapper, Logo, MenuItem, Left, Center, Right, DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer };
+const CartDetail = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:25% 20% 20% 15% 15% 5%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    border: solid;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 80%;
+    `;
+
+const CartDetailTitle = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:25% 20% 20% 15% 15% 5%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    text-align: center;
+    font-size: 90%;
+    p {
+        color: purple;
+        text-decoration: underline;
+        font-weight: bold;
+    };
+    `
+
+const CartResume = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:75% 25%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    text-align: center;
+    font-size: 150%;
+    background-color: purple;
+    border-radius: 10px;
+    p {
+        color: white;
+        font-weight: bold;
+        font-style: oblique;
+    };
+    `
+
+const CartOptions = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:33% 33% 33%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    text-align: center;
+    `;
+
+const CartEmpty = styled.h2`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:100%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-style: oblique;
+    font-size: 300%;
+    `;
+
+const CartOptionsAlt = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:100%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    text-align: center;
+    `;
+
+    const CartTitle = styled.h1`
+    font-size: 300%;
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:100%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    text-align: center;
+    `;
+
+export { CartDetail, CartDetailTitle, CartResume, CartOptions, CartEmpty, CartOptionsAlt, CartTitle, Wrapper, Logo, MenuItem, Left, Center, Right, DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer };

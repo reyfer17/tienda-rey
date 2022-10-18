@@ -17,7 +17,8 @@ const CartContextProvider = ({children}) => {
                     imgProduct: product.img,
                     priceProduct: product.price,
                     titleProduct: product.title,
-                    qProduct: q
+                    qProduct: q,
+                    categoryProduct: product.category,
                 }
             ]);
         } else {
