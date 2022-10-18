@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
-import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { serverTimestamp, setDoc, doc, collection, updateDoc, increment } from "firebase/firestore";
 import db from "../utils/firebaseconfig";
 import EndPurchase from "./EndPurchase";
 import TextField from '@mui/material/TextField';
+import Box from '@mui/material/Box';
+import { FormToEnd, FormTitle, FormCancel, ButtonCancel} from "./styledComponents";
 
 const initialForm = {
         name:"",
@@ -69,46 +70,46 @@ const CreateOrder= () => {
         { !orderId ?
             (
             <section>
-                <div className="form">
-                <h2>Completá tus datos para finalizar</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="part-form">
-                        <TextField
-                        type="text"
-                        name="name"
-                        placeholder="Nombre y apellido"
-                        onChange = {handleChange}
-                        required
-                        />
-                    </div>
-                    <div className="part-form">
-                        <TextField
-                        type="number"
-                        name="phone"
-                        placeholder="Celular"
-                        onChange ={handleChange}
-                        required
-                        />
-                    </div>
-                    <div className="part-form">
-                        <TextField
-                        type="email"
-                        name="email"
-                        placeholder="email"
-                        onChange ={handleChange}
-                        required/>
-                    </div>
-                    <div className="buttons-form">
-                        <div>
+                <div>
+                    <FormTitle>Completá tus datos para finalizar el proceso de compra</FormTitle>
+                    <FormToEnd onSubmit={handleSubmit}>
+                        <Box>
                             <TextField
-                            type="submit"
-                            value="CONFIRMAR COMPRA"/>
-                        </div>
-                        <div>
-                            <Button><Link to="/cart/">CANCELAR</Link></Button>
-                        </div>
-                    </div>
-                </form>
+                            type="text"
+                            label="Nombre y apellido"
+                            name="name"
+                            onChange = {handleChange}
+                            required
+                            />
+                        </Box>
+                        <Box>
+                            <TextField
+                            type="number"
+                            name="phone"
+                            label="Celular"
+                            onChange ={handleChange}
+                            required
+                            />
+                        </Box>
+                        <Box>
+                            <TextField
+                            type="email"
+                            name="email"
+                            label="email"
+                            onChange ={handleChange}
+                            required
+                            />
+                        </Box>
+                        <Box>               
+                                <TextField 
+                                color="success" focused
+                                type="submit"
+                                value="CONFIRMAR COMPRA"/>            
+                        </Box>
+                    </FormToEnd>
+                    <Link to="/cart/" style={{textDecoration:"none"}}><FormCancel>
+                        <ButtonCancel color="secondary">Cancelar compra y volver al carrito</ButtonCancel>
+                    </FormCancel></Link>
                 </div>
             </section>
             ) : (

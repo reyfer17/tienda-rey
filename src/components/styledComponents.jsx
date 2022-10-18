@@ -168,7 +168,7 @@ const CartOptionsAlt = styled.div`
     text-align: center;
     `;
 
-    const CartTitle = styled.h1`
+const CartTitle = styled.h1`
     font-size: 300%;
     display:grid;
     grid-auto-flow:column;
@@ -178,4 +178,41 @@ const CartOptionsAlt = styled.div`
     text-align: center;
     `;
 
-export { CartDetail, CartDetailTitle, CartResume, CartOptions, CartEmpty, CartOptionsAlt, CartTitle, Wrapper, Logo, MenuItem, Left, Center, Right, DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer };
+const FormToEnd = styled.form`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:25% 25% 25% 25%;
+    margin:1% 10%;
+    padding: 0% 3%;
+    text-align: center;
+    `;
+
+const FormTitle = styled.h1`
+    font-size: 150%;
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:100%;
+    margin:1% 25%;
+    padding: 0% 3%;
+    text-align: center;
+    `;
+
+const FormCancel = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    grid-template-columns:25%;
+    padding: 0% 3%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    `;
+
+    const ButtonCancel = styled.button`
+    background-color: #a25;
+    font-size: 70%;
+    color: black;
+    cursor: pointer;
+    border-radius: 15px;
+    `;
+
+export { FormToEnd, FormTitle, FormCancel, ButtonCancel, CartDetail, CartDetailTitle, CartResume, CartOptions, CartEmpty, CartOptionsAlt, CartTitle, Wrapper, Logo, MenuItem, Left, Center, Right, DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer };
