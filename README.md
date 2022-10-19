@@ -1,5 +1,10 @@
-# Proyecto final CODERHOUSE ReactJS
+# Proyecto final CODERHOUSE ReactJS de Fernando M. Rey
 ![](/src/assets/More/Review-TIENDAREY.gif)
+
+Este proyecto consiste en un ecommerce que en principio iba a ser de artículos de segunda mano, pero dado que se pedía utilizar contadores de productos, derivó en una tienda común y corriente de ropa, juguetes y libros. 
+El proyecto se llevó a cabo con el uso de ReactJS, utilizando jsx para la estructura y dando estilos con styled-components, Material UI y SweetAlert2 para las alertas. Se usa FireBase para almacenar los productos en venta y guardar las órdenes de compra realizadas. 
+Las imágenes se toman desde la web, los precios son estimativos y las descripciones improvisadas.
+Este proyecto es la evolución del conjunto de desafíos de las clases de React JS dadas por el profesor Alex Marín Mendez en CoderHouse.
 
 # Getting Started with Create React App
 
