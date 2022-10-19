@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-//import customFetch from "../utils/customFetch";
-//import dataFromDB from "../utils/DB";
 import { useParams } from "react-router-dom";
-//import firestoreFetch from "../utils/firestoreFetch";
 import { getAllItems as getProducts, getItemsByCategory as getProductsByCategory } from "../utils/firebaseconfig";
 
 

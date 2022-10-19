@@ -1,7 +1,6 @@
 import Item from "./Item";
 import Grid from '@mui/material/Grid';
 
-
 const ItemList = ({data}) => {
     return(
         <>

@@ -2,18 +2,15 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { CartDetail, CartDetailTitle, CartResume, CartOptions, CartEmpty, CartOptionsAlt, CartTitle } from "./styledComponents";
+import { CartDetail, CartDetailTitle, CartResume, CartOptions, CartEmpty, CartOptionsAlt, CartTitle } from "./StyledComponents";
 import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
-
 
 const Cart = () =>{
     const { cartList, clearCart, removeItem, calcTotalxProduct, calcTotal} = useContext(CartContext)
 
     return (
-        <>
-            
-            <CartTitle>Productos en carrito</CartTitle>
-            
+        <>      
+            <CartTitle>Productos en carrito</CartTitle>  
             {     (cartList.length > 0)
                 ? 
                 <>

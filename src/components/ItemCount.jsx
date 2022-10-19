@@ -1,7 +1,5 @@
 import {ButtonGroup, Button} from "@mui/material";
-import { useEffect } from "react";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 
 const ItemCount = ({initial = 1, stock, onAdd}) => {
     const [count, setCount] = useState(0);

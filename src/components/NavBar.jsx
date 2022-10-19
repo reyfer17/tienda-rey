@@ -1,7 +1,7 @@
 import { AppBar, List, ListItem, ListItemText } from "@mui/material";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
-import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./styledComponents";
+import { Wrapper, Logo, MenuItem, Left, Center, Right } from "./StyledComponents";
 
 const NavBar = () => {
   return (

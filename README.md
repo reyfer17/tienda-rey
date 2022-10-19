@@ -1,4 +1,4 @@
-# Proyecto final DODERHOUSE ReactJS
+# Proyecto final CODERHOUSE ReactJS
 ![](/src/assets/More/Review-TIENDAREY.gif)
 
 # Getting Started with Create React App

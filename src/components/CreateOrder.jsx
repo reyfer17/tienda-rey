@@ -6,7 +6,8 @@ import db from "../utils/firebaseconfig";
 import EndPurchase from "./EndPurchase";
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
-import { FormToEnd, FormTitle, FormCancel, ButtonCancel} from "./styledComponents";
+import { FormToEnd, FormTitle, FormCancel, ButtonCancel} from "./StyledComponents";
+import Swal from 'sweetalert2';
 
 const initialForm = {
         name:"",
@@ -48,7 +49,12 @@ const CreateOrder= () => {
         const newOrderRef = doc(collection(db, "orders"))
         await setDoc(newOrderRef, order)
         
-        alert("Su orden fue creada con nro. de codigo:" + newOrderRef.id)
+        Swal.fire({
+            title: 'Compra Realizada',
+            text: `El código de la operación es "${newOrderRef.id}"`,
+            icon: 'success',
+            confirmButtonText: 'OK!'
+        })
         setOrderId(newOrderRef.id)
         clearCart()
         
@@ -112,11 +118,13 @@ const CreateOrder= () => {
                     </FormCancel></Link>
                 </div>
             </section>
-            ) : (
+            ) 
+            : (
                 <EndPurchase name={name} email={email} phone={phone} orderId={orderId}/>
-            )}
+            )
+        }
         </div>
-        )
+    )
 }
 
 export default CreateOrder;

@@ -1,14 +1,11 @@
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
-import * as React from 'react';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
 import Swal from 'sweetalert2';
-import { DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer} from "./styledComponents";
+import { DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer} from "./StyledComponents";
 import { CartContext } from './CartContext';
-import { useContext } from 'react';
-
 
 const ItemDetail = ({item}) => {
 

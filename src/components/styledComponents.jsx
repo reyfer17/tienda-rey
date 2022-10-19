@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 const Wrapper = styled.div`
     padding: 1rem 2rem;
     display: flex;
@@ -29,13 +28,14 @@ const Logo = styled.h1`
     color: red;
     &:hover { 
         color: yellow ;
-        font-size: 4.1rem;}
+    }
     &:visited { 
         color: yellow ;
-        font-size: 4.1rem;}
+    }
     &:active { 
-        color: yellow ;
-        font-size: 4.2rem;}
+        color: white ;
+        text-decoration: underline;
+    }
     `;
 
 const Right = styled.div`
@@ -117,8 +117,8 @@ const CartDetailTitle = styled.div`
         color: purple;
         text-decoration: underline;
         font-weight: bold;
-    };
-    `
+    }
+    `;
 
 const CartResume = styled.div`
     display:grid;
@@ -134,8 +134,8 @@ const CartResume = styled.div`
         color: white;
         font-weight: bold;
         font-style: oblique;
-    };
-    `
+    }
+    `;
 
 const CartOptions = styled.div`
     display:grid;
@@ -215,4 +215,24 @@ const FormCancel = styled.div`
     border-radius: 15px;
     `;
 
-export { FormToEnd, FormTitle, FormCancel, ButtonCancel, CartDetail, CartDetailTitle, CartResume, CartOptions, CartEmpty, CartOptionsAlt, CartTitle, Wrapper, Logo, MenuItem, Left, Center, Right, DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer };
+    const Ticket = styled.section`
+        display:flex;
+        flex-direction: column;
+        background-color: white;
+        margin: 5% 33%;
+        border: solid purple 3px;
+        border-radius: 25px;
+        text-align: center;
+        div{
+            h2{
+                color: blue;
+            }
+            p{
+                color: purple;
+                font-weight: bold;
+                font-style: oblique;
+            }
+        }
+        `;
+
+export { Ticket, FormToEnd, FormTitle, FormCancel, ButtonCancel, CartDetail, CartDetailTitle, CartResume, CartOptions, CartEmpty, CartOptionsAlt, CartTitle, Wrapper, Logo, MenuItem, Left, Center, Right, DetailTitle, DetailDetail, DetailPrice, DetailStock, ItemCountContainer };
